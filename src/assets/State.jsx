@@ -10,7 +10,7 @@ function State() {
     if ( operation === "+") setResult(num1 + num2);
     else if (operation === "-") setResult(num1 - num2);
     else if (operation === "*") setResult(num1 * num2);
-    else if (operation === "%") setResult(num2 !== 0 ? num1 % num2 : "خطأ في القسمة");
+    else if (operation === "%") setResult(num1 % num2);
   };
 
   return (
