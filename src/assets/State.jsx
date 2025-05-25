@@ -1,48 +1,58 @@
 import React, { useState } from "react";
 
+
 function State() {
+  const [result, setResult] = useState("");
 
-  const [num1, setNum1] = useState(0);
-  const [num2, setNum2] = useState(0);
-  const [result, setResult] = useState(null);
+  const num1 = 10;
+  const num2 = 10;
 
-  const Operation = (operation) => {
-    if ( operation === "+") setResult(num1 + num2);
-    else if (operation === "-") setResult(num1 - num2);
-    else if (operation === "*") setResult(num1 * num2);
-    else if (operation === "%") setResult(num1 % num2);
+  const Opeartion = (Opeartion) => 
+  {
+    if (Opeartion === "+") setResult(num1 + num2);
+    else if (Opeartion === "-") setResult(num1 - num2);
+    else if (Opeartion === "*") setResult(num1 * num2);
+    else if (Opeartion === "%") setResult(num1 % num2);
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white px-4">
-      <h2 className="text-2xl font-bold mb-6">: حاسبة للعمليات البسيطة - أدخل الرقم الأول والثاني</h2>
+    <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4">
+      <h1 className="text-3xl font-extrabold mb-6">حاسبة للعمليات الأساسية - قيم ثابتة</h1>
 
-      <div className="flex flex-col sm:flex-row gap-4 mb-4">
-        <input
-          type="number"
-          value={num1}
-          onChange={(e) => setNum1(Number(e.target.value))}
-          placeholder="القيمة 1"
-          className="px-4 py-2 rounded bg-white text-black"
-        />
-        <input
-          type="number"
-          value={num2}
-          onChange={(e) => setNum2(Number(e.target.value))}
-          placeholder="القيمة 2"
-          className="px-4 py-2 rounded bg-white text-black"
-        />
+      <p className="text-lg mb-6">
+        القيمة الأولى: <span className="font-bold">{num1}</span> | القيمة الثانية: <span className="font-bold">{num2}</span>
+      </p>
+
+      <div className="flex gap-4 mb-8">
+        <button
+          onClick={() => Opeartion("+")}
+          className="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded text-lg font-semibold"
+        >
+          +
+        </button>
+        <button
+          onClick={() => Opeartion("-")}
+          className="bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-lg font-semibold"
+        >
+          -
+        </button>
+        <button
+          onClick={() => Opeartion("*")}
+          className="bg-yellow-500 hover:bg-yellow-600 px-6 py-2 rounded text-lg font-semibold"
+        >
+          *
+        </button>
+        <button
+          onClick={() => Opeartion("%")}
+          className="bg-red-500 hover:bg-red-600 px-6 py-2 rounded text-lg font-semibold"
+        >
+          %
+        </button>
       </div>
 
-      <div className="flex gap-4 mb-6">
-        <button onClick={() => Operation("+")} className="cursor-pointer bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">+</button>
-        <button onClick={() => Operation("-")} className="cursor-pointer bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">-</button>
-        <button onClick={() => Operation("*")} className="cursor-pointer bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">*</button>
-        <button onClick={() => Operation("%")} className="cursor-pointer bg-blue-500 px-4 py-2 rounded hover:bg-blue-600">%</button>
+      <div className="text-2xl font-bold">
+        النتيجة: {result}
       </div>
-
-      <p className="text-xl font-semibold">{result} : النتيجة</p>
-
     </div>
   );
 }
