@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 function State() {
-  const [result, setResult] = useState("");
+  const [result, setResult] = useState(""); 
 
   const num1 = 10;
   const num2 = 10;
@@ -17,7 +17,7 @@ function State() {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center px-4">
-      <h1 className="text-3xl font-extrabold mb-6">حاسبة للعمليات الأساسية - قيم ثابتة</h1>
+      <h1 className="text-3xl font-extrabold mb-6">حاسبة للعمليات الأساسية </h1>
 
       <p className="text-lg mb-6">
         القيمة الأولى: <span className="font-bold">{num1}</span> | القيمة الثانية: <span className="font-bold">{num2}</span>
